@@ -1,68 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+/* === Custom Design Tokens === */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --background: #0f0f11;
+  --foreground: #f1f5f9;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --color-primary: #6366f1; /* indigo-500 */
+  --color-primary-hover: #4f46e5; /* indigo-600 */
+  --color-accent: #7dd3fc; /* sky-300 */
+  --color-input: #1f2937; /* gray-800 */
+  --color-card: #1e1e20;
+  --color-border: #334155; /* slate-700 */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  --font-main: "Inter", sans-serif;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --background: #f8fafc;
+    --foreground: #0f172a;
+
+    --color-primary: #6366f1;
+    --color-primary-hover: #4f46e5;
+    --color-accent: #0369a1;
+    --color-input: #f1f5f9;
+    --color-card: #ffffff;
+    --color-border: #e2e8f0;
   }
-  a:hover {
-    color: #747bff;
+}
+
+/* === Tailwind-compatible Utilities === */
+@layer utilities {
+  .bg-background {
+    background-color: var(--background);
   }
-  button {
-    background-color: #f9f9f9;
+
+  .bg-card {
+    background-color: var(--color-card);
   }
+
+  .bg-input {
+    background-color: var(--color-input);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .bg-primary-hover {
+    background-color: var(--color-primary-hover);
+  }
+
+  .text-foreground {
+    color: var(--foreground);
+  }
+
+  .text-primary {
+    color: var(--color-primary);
+  }
+
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  .border-custom {
+    border-color: var(--color-border);
+  }
+
+  .font-main {
+    font-family: var(--font-main);
+  }
+}
+
+/* === Global Reset === */
+body {
+  font-family: var(--font-main);
+  background-color: var(--background);
+  color: var(--foreground);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
