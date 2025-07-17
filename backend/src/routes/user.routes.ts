@@ -10,7 +10,7 @@ const router = Router()
 
 router.get('/users', getUsers)
 router.post('/users', addUser)
-router.put('/users', updateUser)
-router.delete('/users', deleteUser)
+router.put('/users/:id', updateUser)
+router.delete('/users/:id', deleteUser)
 
 export const userRouter = router
