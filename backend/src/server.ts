@@ -2,6 +2,7 @@ import dotenv from 'dotenv'
 import express, { json, Request, Response } from 'express'
 import cors from 'cors'
 import { prisma } from './db/prisma'
+import { userRouter } from './routes/user.routes'
 
 dotenv.config()
 const app = express()
@@ -16,7 +17,7 @@ async function main() {
 	)
 
 	// routes
-
+  app.use("/", userRouter)
 	// 404 + fall back
   app.all(/(.*)/, (req, res)=> {
     res.status(404).json({message: "Not found!"})
