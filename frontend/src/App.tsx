@@ -1,3 +1,4 @@
+import AddUserForm from './components/AddUserForm'
 import UserTable from './components/UserTable'
 
 const App = () => {
@@ -8,7 +9,9 @@ const App = () => {
 					User Manager
 				</h1>
 			</div>
+      <AddUserForm/>
       <UserTable/>
+
 		</div>
 	)
 }
