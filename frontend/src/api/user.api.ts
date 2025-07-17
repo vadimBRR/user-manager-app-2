@@ -4,7 +4,8 @@ import type { User } from '../type/user.type'
 import { api } from './axios'
 
 export async function getUsers():Promise<User[]>{
-  return await api.get("/users")
+  const data = await api.get("/users")
+  return data.data
 }
 
 export async function addUser(user:CreateUserDto):Promise<User> {

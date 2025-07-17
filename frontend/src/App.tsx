@@ -1,3 +1,5 @@
+import UserTable from './components/UserTable'
+
 const App = () => {
 	return (
 		<div className='flex-1 h-full min-h-screen bg-background px-4 py-4'>
@@ -6,6 +8,7 @@ const App = () => {
 					User Manager
 				</h1>
 			</div>
+      <UserTable/>
 		</div>
 	)
 }
