@@ -1,19 +1,17 @@
-import AddUserForm from './components/AddUserForm'
-import UserTable from './components/UserTable'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Features from './components/Features'
+import HowItWorks from './components/HowItWorks'
 
 const App = () => {
-	return (
-		<div className='flex-1 h-full min-h-screen bg-background px-4 py-4'>
-			<div className='border-b border-custom pb-2'>
-				<h1 className='text-white text-3xl text-center font-bold'>
-					User Manager
-				</h1>
-			</div>
-      <AddUserForm/>
-      <UserTable/>
-
-		</div>
-	)
+  return (
+    <div className="bg-background text-foreground font-main">
+      <Navbar />
+      <Hero />
+      <Features/>
+      <HowItWorks/>
+    </div>
+  )
 }
 
 export default App
